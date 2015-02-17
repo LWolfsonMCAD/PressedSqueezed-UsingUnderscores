@@ -39,6 +39,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	10.2 Asides
 	10.3 Comments
 	10.4 Footer
+	10.5 Layout
 11.0 Infinite scroll
 12.0 Media
 	12.1 Captions
@@ -49,6 +50,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 1.0 Normalize
 --------------------------------------------------------------*/
+* { -moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -346,6 +352,23 @@ big {
 	font-size: 125%;
 }
 
+.entry-title {
+	font-family: josefin-slab, serif;
+	font-weight: 400;
+	font-size: 3em;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.entry-title a {
+	text-decoration: none;
+	color: #404040;
+}
+
+.entry-title a:hover {
+	border-bottom: 1px dotted #222;
+}
+
 /*--------------------------------------------------------------
 2.1 Masthead
 --------------------------------------------------------------*/
@@ -540,6 +563,10 @@ a:active {
 	outline: 0;
 }
 
+.nav-links {
+	display: none;
+}
+
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
@@ -673,6 +700,12 @@ a:active {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+.site {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -715,6 +748,11 @@ a:active {
 	margin: auto;
 }
 
+.entry-meta,
+.posted-on,
+.entry-footer {
+	display: none;
+}
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
@@ -754,10 +792,42 @@ a:active {
 	font-weight: 700;
 	font-size: 1em;
 	text-align: left;
+	margin-bottom: .67em;
+	margin-top: .67em;
 }
 
 .site-footer p {
 	line-height: .5;
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+/*--------------------------------------------------------------
+10.5 Layout
+--------------------------------------------------------------*/
+.content-area {
+	float: left;
+	width: 80%;
+}
+
+.widget-area {
+	float: left;
+	width: 20%;
+	padding-left: 2em;
+}
+
+#homepage-featured-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+10.6 Excerpts
+--------------------------------------------------------------*/
+.read-more {
+	display: block;
+	text-align: right;
 }
 
 /*--------------------------------------------------------------
@@ -878,3 +948,12 @@ object {
 	width: 1px;
 }
 
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
