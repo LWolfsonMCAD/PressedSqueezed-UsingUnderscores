@@ -596,6 +596,14 @@ a:active {
 	display: none;
 }
 
+.menu-item a {
+	text-decoration: none;
+}
+
+.menu-item a:hover {
+	border-bottom: 1px dotted #222;
+}
+
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
